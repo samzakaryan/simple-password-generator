@@ -4,6 +4,7 @@ lowercase = ('abcdefghijklmnopqrstuvwxyz')
 uppercase = ('ABCDEFGHIJKLMNOPQRSTUVWXYZ')
 num = ('0123456789')
 symbol = ('!@#$%^&*')
+common_passwords = []
 
 def get_length(prompt):
     length = int(input(prompt))
@@ -49,15 +50,27 @@ def generate_password(length, chars):
     return password
 
 def main():
-    print("\n" + "="*26)
-    print("    PASSWORD GENERATOR")
-    print("="*26 + "\n")
-    length = get_length("Enter password length (8-20): ")
-    chars = available_chars()
-    password = generate_password(length, chars)
-    print("\n" + "="*44)
-    print("Your generated password is:", password)
-    print("="*44 + "\n")
+    while True:
+        print("\n" + "="*26)
+        print("    PASSWORD GENERATOR")
+        print("="*26 + "\n")
+        print("1. Generate password")
+        print("2. Quit")
+        choice = input("Choose option: ")
+
+        if choice == '1':
+            length = get_length("Enter password length (8-20): ")
+            chars = available_chars()
+            password = generate_password(length, chars)
+            print("\n" + "="*50)
+            print("Generated password is:", password)
+            print("="*50)
+            pass
+        elif choice == '2':
+            print("Exiting the programm...")
+            break
+        else:
+            print("Invalid choice!")
 
 if __name__ == "__main__":
     main()
