@@ -1,78 +1,64 @@
 # Password Generator
 
-A command-line password generator built with Python. Create secure, customizable passwords with multiple character type options and length control.
+A simple command-line password generator written in Python that creates random passwords based on user preferences.
 
 ## Features
 
-- 🔢 Custom password length (8-20 characters)
-- 🔤 Choose character types to include:
+- Generate passwords with customizable length (8-20 characters)
+- Choose which character types to include:
   - Lowercase letters (a-z)
   - Uppercase letters (A-Z)
   - Numbers (0-9)
-  - Special symbols (!@#$%^&*)
-- ✔️ Input validation for all user choices
-- 🎲 Randomized generation for security
-- 🚫 Prevents weak passwords (minimum 8 characters)
+  - Symbols (!@#$%^&*)
+- Input validation to ensure secure password requirements
+- User-friendly console interface
 
 ## Requirements
 
 - Python 3.x
 
-## Setup
-
-1. Clone the repository:
-```bash
-   git clone https://github.com/yourusername/password-generator.git
-   cd password-generator
-```
-
-2. Run the program:
-```bash
-   python password_generator.py
-```
-
 ## How to Use
 
-1. Choose your password length (8-20)
-2. Select which character types to include (y/n):
-   - Lowercase letters
-   - Uppercase letters
-   - Symbols
-   - Numbers
-3. Your secure password will be generated instantly!
+1. Run the program:
+   ```bash
+   python passwordgen.py
+   ```
 
-## Example Usage
+2. Follow the prompts:
+   - Enter desired password length (between 8 and 20 characters)
+   - Choose which character types to include (y/n for each option)
+   - Your generated password will be displayed
+
+## Example
+
 ```
-Password generator
-Choose the length of your password: 12
-Should lowercase symbols be in password? y/n: y
-Should uppercase symbols be in password? y/n: y
-Should symbols be in password? y/n: y
-Should numbers be in password? y/n: n
-Your password is: aB@mKpL#xWqT
+==========================
+    PASSWORD GENERATOR
+==========================
+
+Enter password length (8-20): 12
+Include lowercase letters? (y/n): y
+Include uppercase letters? (y/n): y
+Include numbers? (y/n): y
+Include symbols? (y/n): n
+
+============================================
+Your generated password is: aB3kLmNpQrXy
+============================================
 ```
 
-## How It Works
+## Functions
 
-- Uses Python's `random` module for secure randomization
-- Validates all user inputs to prevent errors
-- Builds a character pool based on your selections
-- Randomly selects characters from the pool to create your password
+- `get_length(prompt)` - Validates and returns password length
+- `get_yes_no_input(type, prompt)` - Gets yes/no user input
+- `available_chars()` - Builds character set based on user choices
+- `generate_password(length, chars)` - Generates random password
+- `main()` - Main program loop
 
-## Security Note
+## Notes
 
-This generator creates strong passwords when using multiple character types and longer lengths. For maximum security:
-- Use all character types
-- Choose length 12+ characters
-- Avoid using the same password across multiple sites
-
-## Future Improvements
-
-- [ ] Generate multiple password options at once
-- [ ] Add password strength indicator
-- [ ] Copy to clipboard functionality
-- [ ] Exclude ambiguous characters option (0/O, 1/l/I)
-- [ ] Save passwords securely to encrypted file
+- At least one character type must be selected
+- Invalid inputs will prompt the user to try again
 
 ## License
 
